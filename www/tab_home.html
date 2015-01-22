@@ -1,0 +1,52 @@
+<ons-toolbar class="navigation-bar">
+    <div class="left">
+        <ons-back-button>Voltar</ons-back-button>
+    </div>
+    <div class="center">{{aet.nome}}</div>
+</ons-toolbar>
+<ons-tabbar position="top">
+    <ons-tabbar-item page="tab_principal.html" icon="fa-info-circle" active="true" label="Veículos"></ons-tabbar-item>
+    <ons-tabbar-item page="tab_dimensao.html" icon="fa-arrows-h" label="Dimensão"></ons-tabbar-item>
+    <ons-tabbar-item page="tab_itinerario.html" icon="fa-map-marker" label="Itinerário"></ons-tabbar-item>
+    <ons-tabbar-item page="tab_unidade_acoplada.html" icon="fa-truck" label="Unidades" style="padding:0px 0px 10px 0px;"></ons-tabbar-item>
+</ons-tabbar>
+</ons-tabbar>
+<ons-bottom-toolbar ng-controller="aprovacaoCtrl" ng-hide="aet.status != ''">
+    <ons-button class="button-aprovado aprovado" ng-click="aprovarAET()"><i class="fa fa-check"></i>
+    </ons-button>
+    <ons-button class="button-reprovado reprovado" ng-click="reprovarAET()"><i class="fa fa-times"></i>
+    </ons-button>
+</ons-bottom-toolbar>
+<ons-modal var="modalReprovacao">
+    <ons-toolbar inline>
+        <div class="center">Motivo de Reprovação da AET</div>
+    </ons-toolbar>
+    <ons-list ng-controller="reprovacaoCtrl">
+        <div>
+            <ons-list-item class="item-accordion">
+                <div class="row">
+                    <table class="table" style="white-space:wrap">
+                        <tr>
+                            <td>
+                                <select class="text-input" ng-model="problema_selecionado.id" ng-options="problema.id as problema.name for problema in list" style="width:100%;"></select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row">
+                    <table class="table" style="white-space:wrap">
+                        <tr>
+                            <td>
+                                <textarea class="textarea" id="outros-motivos" placeholder="Escreva outros motivos de reprovação." style="width: 100%;"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+        <div>
+            <button class="button-reprovado reprovar button--large" ng-click="confirmarReprovacao()"> <i class="ion-android-close"></i> Reprovar</button>
+            <button class="button-dois button--large" ng-click="dialog.hide()"> <i class="ion-chevron-left"></i> Cancelar</button>
+        </div>
+    </ons-list>
+</ons-modal>

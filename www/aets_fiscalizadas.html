@@ -1,0 +1,37 @@
+<ons-page ng-controller="fiscalizadasCtrl">
+  <ons-toolbar class="navigation-bar">
+    <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+    <div class="center">AETs em fiscalização</div>
+  </ons-toolbar>
+  
+  <ons-row>
+    <ons-col>
+        <input type="search" class="search-input" placeholder="Buscar..." ng-model="aetFiscalizada.nome">
+        <ons-list>
+            <ons-list-item ng-repeat="aetFiscalizada in aetsFiscalizadas | filter: aetFiscalizada" modifier="chevron" class="list-item-container">
+                <ons-row ng-click="abrirAET(aetFiscalizada)">
+                    <div class="status-amarelo" ng-show="aetFiscalizada.status == '' && aetFiscalizada.cdAET == aet.cdAET"></div>
+                    <div class="status-branco" ng-show="aetFiscalizada.status == ''"></div>
+                    <div class="status-verde" ng-show="aetFiscalizada.status == 'Aprovada'"></div>
+                    <div class="status-vermelho" ng-show="aetFiscalizada.status == 'Reprovada'"></div>
+                  
+                <ons-col>
+                    <div class="name">
+                        {{aetFiscalizada.nome}}
+                    </div>
+                    
+                    <div class="desc">
+                        {{aetFiscalizada.transportador.propriedade}}
+                    </div>
+                    
+                    <div class="desc">
+                        {{aetFiscalizada.transportador.inicioPeriodo}} a {{aetFiscalizada.transportador.fimPeriodo}}
+                    </div>
+                </ons-col>
+                <ons-col width="40px"></ons-col>
+                </ons-row>
+            </ons-list-item>
+        </ons-list>
+    </ons-col>
+  </ons-row>
+</ons-page>

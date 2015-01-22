@@ -1,0 +1,164 @@
+<ons-page>
+    <div class="topbar-space"></div>
+    
+    <ons-list ng-controller="transporteCtrl">
+        <div>
+            <ons-list-header ng-click="toggleObjeto(objeto)" class="title" ng-class="{active:isObjetoShown(objeto)}">
+                <ons-icon icon="ion-arrow-down-b" ng-if="!isObjetoShown(objeto)"></ons-icon>
+                <ons-icon icon="ion-arrow-right-b" ng-if="isObjetoShown(objeto)"></ons-icon>
+                Transportador
+            </ons-list-header>
+          
+            <ons-list-item class="item-accordion" ng-show="!isObjetoShown(objeto)">
+                <div class="row">
+                    <table class="table">
+                        <tr>
+                            <td><b>{{aet.transportador.nome}}</b></td>
+                        </tr>
+                        </table>
+                        <table class="table">
+                        <tr>
+                            <td class="larg_tabela"><b>Endereço<b></td>
+                            <td>{{aet.transportador.endereco.logradouro}} - {{aet.transportador.endereco.cidade}}</td>
+                        </tr>
+                        <tr>
+                            <td class="larg_tabela"><b>CEP<b></td>
+                            <td>{{aet.transportador.endereco.cep}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>UF</b></td>
+                            <td>{{aet.transportador.endereco.uf}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Pais</b></td>
+                            <td>{{aet.transportador.endereco.pais}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Propriedade</b></td>
+                            <td>{{aet.transportador.propriedade}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>RG</b></td>
+                            <td>{{aet.transportador.rg}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>CPF</b></td>
+                            <td>{{aet.transportador.cpf}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Período</b></td>
+                            <td>{{aet.transportador.inicioPeriodo}} a {{aet.transportador.fimPeriodo}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tipo de carga</b></td>
+                            <td>{{aet.transportador.tipoCargo}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+    </ons-list>
+    
+    <ons-list ng-controller="unidadeTracaoCtrl">
+        <div>
+            <ons-list-header ng-click="toggleObjeto(objeto)" class="title" ng-class="{active:isObjetoShown(objeto)}">
+                <ons-icon icon="ion-arrow-down-b" ng-if="!isObjetoShown(objeto)"></ons-icon>
+                <ons-icon icon="ion-arrow-right-b" ng-if="isObjetoShown(objeto)"></ons-icon>
+                Unidade(s) de Tração
+            </ons-list-header>
+          
+            <ons-list-item class="item-accordion" ng-show="!isObjetoShown(objeto)">
+                <div class="row">
+                    <table class="table">
+                        <tr>
+                            <td class="larg_tabela"><b>Marca(s)</b></td>
+                            <td>{{aet.unidadeTracao.marca}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Modelo(s)</b></td>
+                            <td>{{aet.unidadeTracao.modelo}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Ano Fabricação</b></td>
+                            <td>{{aet.unidadeTracao.anoFabricacao}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Potência</b></td>
+                            <td>{{aet.unidadeTracao.potencia}} (Cv)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Direção</b></td>
+                            <td>{{aet.unidadeTracao.direcao}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Sub-Tipo de veículo</b></td>
+                            <td>{{aet.unidadeTracao.subTipo}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>CMT</b></td>
+                            <td>{{aet.unidadeTracao.cmt}} (t)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Nº escoltas credenciadas</b></td>
+                            <td>{{aet.unidadeTracao.numEscoltasEmpresas}}</td>
+                        </tr>
+                        
+                         <tr>
+                            <td><b>Nº escoltas policiais</b></td>
+                            <td>{{aet.unidadeTracao.numEscoltasPoliciais}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Viagem única?</b></td>
+                            <td>{{aet.unidadeTracao.viagemUnica}}</td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td><b>Vel. de transporte</b></td>
+                            <td>{{aet.unidadeTracao.velocidade}} km/h</td>
+                        </tr>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+    </ons-list>
+    
+    <ons-list ng-controller="eixosCtrl">
+        <div>
+            <ons-list-header ng-click="toggleObjeto(objeto)" class="title" ng-class="{active:isObjetoShown(objeto)}">
+                <ons-icon icon="ion-arrow-down-b" ng-if="!isObjetoShown(objeto)"></ons-icon>
+                <ons-icon icon="ion-arrow-right-b" ng-if="isObjetoShown(objeto)"></ons-icon>
+                Eixos do Conjunto Transportador
+            </ons-list-header>
+          
+            <ons-list-item class="item-accordion" ng-show="!isObjetoShown(objeto)">
+                <div class="row">
+                    <table class="table">
+                        <theader>
+                            <th>ID</th>   
+                            <th>T/Eixo</th>
+                            <th>Nº Rod/Eixo</th>
+                            <th>D. Ent/Eixo</th>
+                        </theader>
+                        
+                        <tbody ng-repeat="eixo in aet.eixos">
+                            <td>{{eixo.numero}}</td>
+                            <td>{{eixo.tEixo}}</td>
+                            <td>{{eixo.nRodaEixo}}</td>
+                            <td>{{eixo.dEntreEixo}}</td>
+                        </tbody>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+    </ons-list>
+   
+</ons-page>

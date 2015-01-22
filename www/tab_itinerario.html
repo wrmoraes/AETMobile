@@ -1,0 +1,18 @@
+<ons-page>
+    <div class="topbar-space"></div>
+    
+    <ons-list ng-controller="itinerarioCtrl">
+        <div>
+            <ons-list-item class="item-accordion">
+                <div class="row">
+                    <table class="table">
+                        <tr ng-repeat="itinerario in aet.itinerarios">
+                        
+                            <td class="coluna-wrap">{{itinerario.sigla}} - {{itinerario.descricao}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+    </ons-list>
+</ons-page>

@@ -1,0 +1,19 @@
+{
+    "plugins": [
+        "mobi.monaca.plugins.Monaca",
+        "org.apache.cordova.splashscreen",
+        "org.apache.cordova.statusbar",
+        "mobi.monaca.plugins.BarcodeScanner"
+    ],
+    "framework_version": "3.5",
+    "xcode_version": "5",
+    "title-ja": "",
+    "title-en": "AETMobile",
+    "description-ja": "",
+    "description-en": "Aplicativo para dispositivo Móvel que possibilite a fiscalização de AETs no momento da abordagem do agente fiscalizador, com o intuito de identificar fraudes ou inconsistências entre o documento apresentado e a situação atual tanto da carga como dos veículos.",
+    "category": "User Template",
+    "platform": [
+        "android"
+    ],
+    "name": "generated-1421933292-5489e4717e21938d6b98383a"
+}

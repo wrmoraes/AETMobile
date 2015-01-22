@@ -1,0 +1,110 @@
+<ons-page>
+    <div class="topbar-space"></div>
+    
+    <ons-list ng-controller="comprimentosCtrl">
+        <div>
+            <ons-list-header ng-click="toggleObjeto(objeto)" class="title" ng-class="{active:isObjetoShown(objeto)}">
+                <ons-icon icon="ion-arrow-down-b" ng-if="!isObjetoShown(objeto)"></ons-icon>
+                <ons-icon icon="ion-arrow-right-b" ng-if="isObjetoShown(objeto)"></ons-icon>
+                Comprimentos
+            </ons-list-header>
+          
+            <ons-list-item class="item-accordion" ng-show="!isObjetoShown(objeto)">
+                <div class="row">
+                    <table class="table">
+                        <tr>
+                            <td class="b larg_tabela">Altura Total</td>
+                            <td>{{aet.dimensoes.alturaTotal}} (m)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Largura Total</td>
+                            <td>{{aet.dimensoes.larguraTotal}} (m)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Largura do Veiculo</td>
+                            <td>{{aet.dimensoes.larguraVeiculo}} (m)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Excesso lateral direito</td>
+                            <td>{{aet.dimensoes.excessoLateralDir}} (m)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Excesso lateral esquerdo</td>
+                            <td>{{aet.dimensoes.excessoLateralEsq}} (m)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Comprimento do veículo</td>
+                            <td>{{aet.dimensoes.comprimentoVeiculo}} (m)</td>
+                        </tr>                        
+                        
+                        <tr>
+                            <td class="b">Excesso dianteiro</td>
+                            <td>{{aet.dimensoes.excessoDianteiro}} (m)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Excesso traseiro</td>
+                            <td>{{aet.dimensoes.excessoTraseiro}} (m)</td>
+                        </tr>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+    </ons-list>
+    
+    <ons-list ng-controller="pesosCtrl">
+        <div>
+            <ons-list-header ng-click="toggleObjeto(objeto)" class="title" ng-class="{active:isObjetoShown(objeto)}">
+                <ons-icon icon="ion-arrow-down-b" ng-if="!isObjetoShown(objeto)"></ons-icon>
+                <ons-icon icon="ion-arrow-right-b" ng-if="isObjetoShown(objeto)"></ons-icon>
+                Pesos
+            </ons-list-header>
+          
+            <ons-list-item class="item-accordion" ng-show="!isObjetoShown(objeto)">
+                <div class="row">
+                    <table class="table">
+                        <tr>
+                            <td class="larg_tabela b">Peso total (tara+carga)</td>
+                            <td>{{aet.pesos.pesoTotal}} (t)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Peso da 1º un. de tração</td>
+                            <td>{{aet.pesos.peso1Unidade}} (t)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Peso da 2º un. de tração</td>
+                            <td>{{aet.pesos.peso2Unidade}} (t)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Peso da 1º carreta</td>
+                            <td>{{aet.pesos.peso1Carreta}} (t)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Peso da 2º carreta</td>
+                            <td>{{pesos.peso2Carreta}} (t)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="b">Peso da carga</td>
+                            <td>{{aet.pesos.pesoCarga}} (t)</td>
+                        </tr>                        
+                        
+                        <tr>
+                            <td class="b">Peso do acessório e contrapeso</td>
+                            <td>{{aet.pesos.pesoAcessorio}} (t)</td>
+                        </tr>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+    </ons-list>
+</ons-page>

@@ -1,0 +1,28 @@
+<div style="background-image:none; height:100%; background-color: #333 !important;" ng-controller="menuCtrl" >
+
+    <ons-toolbar class="toolbar-menu">
+        <div class="center navigation-bar__title navigation-bar__center">
+            <div class="toolbar-menu">Seu login expira em 7 dias.</div>
+        </div>
+    </ons-toolbar>
+        <br />
+        <ons-list class="menu-list">
+          <ons-list-item class="menu-item" ng-click="atualizar()">
+            <ons-icon icon="fa-refresh"></ons-icon>
+            &nbsp;Sincronizar
+          </ons-list-item>
+          <ons-list-item class="menu-item" ng-click="goAetsFiscalizadas()">
+            <ons-icon icon="fa-history"></ons-icon>
+            &nbsp;AETs Fiscalizadas
+          </ons-list-item>
+          <ons-list-item class="menu-item" ng-click="sair()">
+            <ons-icon icon="fa-sign-out"></ons-icon>
+            &nbsp;Sair
+          </ons-list-item>
+        </ons-list>
+        
+        <div class="tab-bar center toolbar-menu">
+          Última Sincronização:<br>
+          10 / 01 / 2013 - 14:36h
+        </div>
+</div>

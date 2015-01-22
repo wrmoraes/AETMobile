@@ -1,0 +1,23 @@
+<ons-page>
+    <div class="topbar-space"></div>
+    
+    <ons-list ng-controller="comprimentosCtrl">
+        <div>
+            <ons-list-header ng-click="toggleObjeto(objeto)" class="title" ng-class="{active:isObjetoShown(objeto)}">
+                <ons-icon icon="ion-arrow-down-b" ng-if="!isObjetoShown(objeto)"></ons-icon>
+                <ons-icon icon="ion-arrow-right-b" ng-if="isObjetoShown(objeto)"></ons-icon>
+                Placas dos reboques Adicionais
+            </ons-list-header>
+          
+            <ons-list-item class="item-accordion" ng-show="!isObjetoShown(objeto)">
+                <div class="row">
+                    <table class="table" style="white-space:wrap">
+                        <tr ng-repeat="unidadeAcoplada in aet.unidadesAcopladas">
+                            <td>{{unidadeAcoplada.placa}}</td>                        
+                        </tr>
+                    </table>
+                </div>
+            </ons-list-item>
+        </div>
+    </ons-list>
+</ons-page>

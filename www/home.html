@@ -1,0 +1,36 @@
+<ons-page ng-controller="homeCtrl">
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="ons.slidingMenu.toggle()" style="border-bottom: none !important;">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">Busca de AETs</div>
+    </ons-toolbar>
+
+    <div class="container top">
+        
+            <div class="col-xs-12">
+            <form ng-submit="BuscaManual()" style="width: 100%; margin-bottom:30px;">
+                <input type="search" value="" placeholder="Buscar pelo número da AET ou placa" class="search-input" ng-model="field_search">
+            </form>
+            </div>
+            <div class="col-xs-12">
+            <button class="button-dois button--large" ng-click="EscanearCodBarras()">
+                <i class="fa fa-barcode"></i> Código de Barras
+            </button>
+            </div>
+            <div class="col-xs-12">
+            <button class="button-dois button--large" ng-click="EscanearCodBarras()">
+                <i class="fa fa-qrcode"></i> QR Code
+            </button>
+            </div>
+        
+    </div>
+</ons-page>
+
+<ons-modal var="modalAtualizacao">
+    Sincronizando AETs
+    <ons-icon icon="ion-loading-a" spin="true"></ons-icon>
+    <br>
+</ons-modal>

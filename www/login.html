@@ -1,0 +1,20 @@
+<ons-page ng-controller="loginCtrl">
+<div class="page-azul">
+  <div class="container">
+    <div class="row">
+      <div class="center-theme"><img src="img/logotipo.png" width="300px" /></div>
+    </div>
+  </div>
+  
+    <form>
+        <div class="login-form">
+            <input type="text" class="text-input--underbar" placeholder="Usuário" value="" style="margin-top:5px;" ng-model="credentials.user"/>
+            <input type="password" class="text-input--underbar" placeholder="Senha" value="" style="margin-top:5px;" ng-model="credentials.password"/>
+            <br>
+            <ons-button modifier="large" class="login-button" ng-click="login(credentials)"><i class="fa fa-sign-in"></i> Entrar</ons-button>
+            <br><br><br><br>
+            <ons-button modifier="quiet" class="forgot-password branco" ng-click="esqueceu_senha()">Esqueceu sua senha?</ons-button>
+        </div>
+    </form>  
+</div>
+</ons-page>
